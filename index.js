@@ -404,6 +404,7 @@ function getIonicCompound (){
   let randomMetal = Math.random() * metals.length();
   let randomNonMetal = Math.random() * nonMetals.length();
 
-  let ionicCompound = metals
+  let ionicCompound = metals[randomMetal].name + nonMetals[randomNonMetal].ionicCompoundEnd;
 
+  
 }
