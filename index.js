@@ -1,0 +1,409 @@
+console.log("SO₄²-");
+
+
+let metals = [
+  Hydrogen = {
+    name: "Hydrogen",
+    symbol: "H",
+    valence: 1,
+    charge: "1+"
+  },
+  Lithium = {
+    name: "Lithium",
+    symbol: "Li",
+    valence: 1,
+    charge: "1+" 
+  },
+  Sodium = {
+    name: "Sodium",
+    symbol: "Na",
+    valence: 1,
+    charge: "1+" 
+  },
+  Potassium = {
+    name: "Potassium",
+    symbol: "K",
+    valence: 1,
+    charge: "1+" 
+  },
+  Rubidium = {
+    name: "Rubidium",
+    symbol: "Rb",
+    valence: 1,
+    charge: "1+"
+  },
+  Cesium = {
+    name: "Cesium",
+    symbol: "Cs",
+    valence: 1,
+    charge: "1+"
+  },
+  Beryllium = {
+    name: "Beryllium",
+    symbol: "Be",
+    valence: 2,
+    charge: "2+"
+  },
+  Magnesium = {
+    name: "Magnesium",
+    symbol: "Mg",
+    valence: 2,
+    charge: "1+"
+  },
+  Calcium = {
+    name: "Calcium",
+    symbol: "Ca",
+    valence: 2,
+    charge: "2+"
+  },
+  Strontium = {
+    name: "Strontium",
+    symbol: "Sr",
+    valence: 2,
+    charge: "2+"
+  },
+  Barium = {
+    name: "Barium",
+    symbol: "Ba",
+    valence: 2,
+    charge: "2+"
+  },
+  Aluminum = {
+    name: "Aluminum",
+    symbol: "Al",
+    valence: 3,
+    charge: "3+"
+  },
+  Zinc = {
+    name: "Zinc",
+    symbol: "Zn",
+    valence: 2,
+    charge: "2+"
+  },
+  Silver = {
+    name: "Silver",
+    symbol: "Ag",
+    valence: 1,
+    charge: "1+"
+  },
+  Copper1 = {
+    name: "Cuperous",
+    symbol: "Cu(I)",
+    valence: 1,
+    charge: "1+"
+  },
+  Copper2 = {
+    name: "Cuperic",
+    symbol: "Cu(II)",
+    valence: 2,
+    charge: "2+"
+  },
+  Iron2 = {
+    name: "Ferrous",
+    symbol: "Fe(II)",
+    valence: 2,
+    charge: "2+"
+  },
+  Iron3= {
+    name: "Ferric",
+    symbol: "Fe(III)",
+    valence: 3,
+    charge: "3+"
+  },
+  Tin2 = {
+    name: "Stannous",
+    symbol: "Sn(II)",
+    valence: 2,
+    charge: "2+"
+  },
+  Tin4= {
+    name: "Stannic",
+    symbol: "Sn(IV)",
+    valence: 4,
+    charge: "4+"
+  },
+  Lead2 = {
+    name: "Plumbous",
+    symbol: "Pb(II)",
+    valence: 2,
+    charge: "2+"
+  },
+  Lead4 = {
+    name: "Plumbic",
+    symbol: "Pb(IV)",
+    valence: 4,
+    charge: "4+"
+  },
+  Gold1 = {
+    name: "Aurous",
+    symbol: "Au(I)",
+    valence: 1,
+    charge: "1+"
+  },
+  Gold3 = {
+    name: "Auric",
+    symbol: "Au(III)",
+    valence: 3,
+    charge: "3+"
+  },
+  Mercury1 = {
+    name: "Mercurous",
+    symbol: "Hg(I)",
+    valence: 1,
+    charge: "1+"
+  },
+  Mercury2 = {
+    name: "Mercuric",
+    symbol: "Hg(II)",
+    valence: 2,
+    charge: "2+"
+  },
+  Antimony3 = {
+    name: "Stibnous",
+    symbol: "Sb(III)",
+    valence: 3,
+    charge: "3+"
+  },
+  Antimony5 = {
+    name: "Stibnic",
+    symbol: "Sb(V)",
+    valence: 5,
+    charge: "5+"
+  },
+  Nickel2 = {
+    name: "Nickelous",
+    symbol: "Ni(II)",
+    valence: 2,
+    charge: "2+"
+  },
+  Nickel3 = {
+    name: "Nickelic",
+    symbol: "Ni(III)",
+    valence: 3,
+    charge: "3+"
+  },
+  Cobalt2 = {
+    name: "Cobaltous",
+    symbol: "Co(II)",
+    valence: 2,
+    charge: "2+"
+  },
+  Cobalt3 = {
+    name: "Cobaltic",
+    symbol: "Co(III)",
+    valence: 3,
+    charge: "3+"
+  },
+  Manganese2 = {
+    name: "Manganous",
+    symbol: "Mn(II)",
+    valence: 2,
+    charge: "2+"
+  },
+  Manganese4 = {
+    name: "Manganic",
+    symbol: "Mn(IV)",
+    valence: 4,
+    charge: "4+"
+  },
+  Arsenic3 = {
+    name: "Arsenous",
+    symbol: "As(III)",
+    valence: 3,
+    charge: "3+"
+  },
+  Arsenic5 = {
+    name: "Arsenic",
+    symbol: "As(V)",
+    valence: 5,
+    charge: "5+"
+  }
+]  
+
+let nonMetals = [
+  Nitrogen = {
+      name: "Nitrogen",
+      symbol: "N",
+      valence: 5,
+      charge: "3-",
+      ionicCompoundEnd: "Nitride"
+  },
+
+  Oxygen = {
+      name: "Oxygen",
+      symbol: "O",
+      valence: 6,
+      charge: "2-",
+      ionicCompoundEnd: "Oxide"
+  },
+
+  Sulphur = {
+      name: "Sulphur",
+      symbol: "S",
+      valence: 6,
+      charge: "2-",
+      ionicCompoundEnd: "Sulphide"
+  },
+
+  Selenium = {
+      name: "Selenium",
+      symbol: "Se",
+      valence: 6,
+      charge: "2-",
+      ionicCompoundEnd: "Selenide"
+  },
+
+  Fluorine = {
+      name: "Fluorine",
+      symbol: "F",
+      valence: 7,
+      charge: "1-",
+      ionicCompoundEnd: "Flouride"
+  },
+
+  Chlorine = {
+      name: "Chlorine",
+      symbol: "Cl",
+      valence: 7,
+      charge: "1-",
+      ionicCompoundEnd: "Chloride"
+  },
+
+  Bromine = {
+      name: "Bromine",
+      symbol: "Br",
+      valence: 7,
+      charge: "1-",
+      ionicCompoundEnd: "Bromide"
+  },
+
+  Iodine = {
+      name: "Iodine",
+      symbol: "I",
+      valence: 7,
+      charge: "1-",
+      ionicCompoundEnd: "Iodide"
+  },
+]
+
+let polyatomics = [
+
+  Bromate = {
+      name: "Bromate",
+      symbol: "BrO₃",
+      charge: "1+"
+  },
+
+  Iodate = {
+      name: "Iodate",
+      symbol: "IO₃",
+      charge: "1+"
+  },
+
+  Nitrate = {
+      name: "Nitrate",
+      symbol: "NO₃",
+      charge: "1+"
+  },
+
+  Chlorate = {
+      name: "Chlorate",
+      symbol: "ClO₃",
+      charge: "1+"
+  },
+
+  Sulphate = {
+      name: "Sulphate",
+      symbol: "SO₄",
+      charge: "2+"
+  },
+
+  Carbonate = {
+      name: "Carbonate",
+      symbol: "CO₃",
+      charge: "2+"
+  },
+
+  Chromate = {
+      name: "Chromate",
+      symbol: "CrO₄",
+      charge: "2+"
+  },
+
+  Phosphate = {
+      name: "Phosphate",
+      symbol: "PO₄",
+      charge: "3+"
+  },
+
+  Ammonium = {
+      name: "Ammonium",
+      symbol: "NH₄",
+      charge: "1+"
+  },
+
+  Acetate = {
+      name: "Acetate",
+      symbol: "CH₃COO",
+      charge: "1-",
+  },
+
+  Bicarbonate = {
+      name: "Bicarbonate",
+      symbol: "HCO₃",
+      charge: "1-"
+  },
+
+  Dichromate = {
+      name: "Bicarbonate",
+      symbol: "Cr₂O₇",
+      charge: "2-"
+  },
+
+  Hydroxide = {
+      name: "Hydroxide",
+      symbol: "OH",
+      charge: "1-"
+  },
+
+  Thiocyanate = {
+      name: "Thiocyanate",
+      symbol: "SCN",
+      charge: "1-"
+  },
+
+  Permanganate = {
+      name: "Permanganate",
+      symbol: "MnO₄",
+      charge: "1-"
+  },
+
+  Cyanate = {
+      name: "Cyanate",
+      symbol: "OCN",
+      charge: "1-"
+  },
+
+  Cyanide = {
+      name: "Cyanide",
+      symbol: "CN",
+      charge: "1-"
+  },
+] 
+
+const buttonsDiv = document.getElementById("buttonDiv-El");
+
+
+console.log(metals[0].name);
+console.log(polyatomics[0].name);
+
+document.createElement()
+
+
+function getIonicCompound (){
+  let randomMetal = Math.random() * metals.length();
+  let randomNonMetal = Math.random() * nonMetals.length();
+
+  let ionicCompound = metals
+
+}
