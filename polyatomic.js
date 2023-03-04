@@ -91,7 +91,7 @@ let polyatomics = [
         name: "Acetate",
         symbol: "CH₃COO",
         elements: ["C", "H", "C", "O", "O"],
-        charge: "1-",
+        charge: "1-"
     },
   
     Bicarbonate = {
