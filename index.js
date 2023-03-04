@@ -437,6 +437,11 @@ function getIonicCompound (){
   let wrongIonic;
   for(i = 0; i < 4; i++){
     wrongIonic = `${metal.symbol}${subscripts[Math.floor((Math.random() * 6)) + 1]}${nonMetal.symbol}${subscripts[Math.floor((Math.random() * 6)) + 1]}`;
+    if(questionArray.indexOf(wrongIonic) != -1){
+      while(questionArray.indexOf(wrongIonic) != -1){
+        wrongIonic = `${metal.symbol}${subscripts[Math.floor((Math.random() * 6)) + 1]}${nonMetal.symbol}${subscripts[Math.floor((Math.random() * 6)) + 1]}`;
+      }
+    }
     questionArray.push(wrongIonic);
   }
   
@@ -456,8 +461,9 @@ const buttonThree = document.getElementById("button3-El");
 const buttonFour = document.getElementById("button4-El");
 
 buttonOne.addEventListener("click", function(){
-  if(buttonOne.textContent == infoArr[0]){
-    //buttonOne.style.backgroundColor("green");
+  if(buttonOne.textContent === infoArr[0]){
+    buttonOne.style.backgroundColor = "green";
+    console.log("Correct");
   } 
   else{
     //buttonOne.style.backgroundColor("red");
@@ -466,8 +472,9 @@ buttonOne.addEventListener("click", function(){
   newQuestions(infoArr);
 })
 buttonTwo.addEventListener("click", function(){
-  if(buttonTwo.textContent == infoArr[0]){
-    //buttonTwo.style.backgroundColor("green");
+  if(buttonTwo.textContent === infoArr[0]){
+    buttonTwo.style.backgroundColor = "green";
+    console.log("Correct");
   }
   else{
     //buttonTwo.style.backgroundColor("red");
@@ -476,8 +483,9 @@ buttonTwo.addEventListener("click", function(){
   newQuestions(infoArr);
 })
 buttonThree.addEventListener("click", function(){
-  if(buttonThree.textContent == infoArr[0]){
-    //buttonThree.style.backgroundColor("green");
+  if(buttonThree.textContent === infoArr[0]){
+    buttonThree.style.backgroundColor = "green";
+    console.log("Correct");
   }
   else{
     //buttonThree.style.backgroundColor("red");
@@ -486,8 +494,9 @@ buttonThree.addEventListener("click", function(){
   newQuestions(infoArr);
 })
 buttonFour.addEventListener("click", function(){
-  if(buttonFour.textContent == infoArr[0]){
-    //buttonFour.style.backgroundColor("green");
+  if(buttonFour.textContent === infoArr[0]){
+    buttonFour.style.backgroundColor = "green";
+    console.log("Correct");
   }
   else{
     //buttonFour.style.backgroundColor("red");
@@ -500,9 +509,9 @@ buttonFour.addEventListener("click", function(){
 
 
 
-function newQuestions(infoList){
-
-  
+function newQuestions(info){
+  infoList = info.slice();
+  console.log(infoList);
   // const divButtons = document.getElementById("optionsContainer-El");
   
   //Puts all of the button elements into an array to be randomized
@@ -524,8 +533,10 @@ function newQuestions(infoList){
     
    
 
-    
-    
+    console.log("The info Arr is")
+    console.log(infoArr);
+    console.log("The infoList is")
+    console.log(infoList)
   }
   
 
