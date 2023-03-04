@@ -10,11 +10,17 @@
     transition: .2s linear;
 }
 
+@media (-webkit-device-pixel-ratio: 1.25) {
+    * {
+      zoom: 0.8;
+    }
+  }
+
 body {
     background-image: url(imagesforhome/background\ img.jpg);
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .menu li a{
@@ -130,12 +136,20 @@ button {
 
 .aboutUs, .aboutUsRow{
     display: flex;
-    justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    width: 50%;
-    margin-left: 25%;
+    flex-wrap: wrap;
 }
+
+.aboutUs .aboutUs .aboutUsContent{
+    flex:1 1 45rem;
+    padding:2rem;
+}
+
+.aboutUs .aboutUs .aboutUsImg img{
+    width: 100%;
+}
+
 
 .heading {
     display: flex;
@@ -159,7 +173,7 @@ button {
     margin-left: 25%;
 }
 
-.question {
+.question{
     display: flex;
     width: 100%;
     border-radius: 100px;
@@ -170,9 +184,37 @@ button {
     justify-content: center;
 }
 
-.question:hover{
+.question:hover {
     cursor: pointer;
     background: rgba(247, 240, 240, 0.774);
     transition: 0.5s;
     text-decoration: underline rgb(77, 77, 77);
 }
+
+.nextQuestion {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-family: sans-serif;
+    overflow: auto;
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    color: rgb(72, 76, 122);
+    font-size: 14px;
+    height: 38px;
+    padding: 8px 24px;
+    border-radius: 50px;
+    background-image: linear-gradient(180deg,#fff,#f5f5fa);
+    box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%);
+    transition: all .2s ease-out;
+}
+
+.nextQuestion:hover{
+    box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%), 0 4px 6px 0 rgb(93 100 148 / 20%);
+} 
+    
+
+
