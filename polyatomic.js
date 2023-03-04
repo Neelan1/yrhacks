@@ -5,7 +5,7 @@ let alreadyClicked = false;
 console.log("SO₄²-");
 const score = document.getElementById("score-El")
 let buttonNextQuestion = document.createElement("button");
-buttonNextQuestion.textContent = "Click For Next Question";
+buttonNextQuestion.textContent = "Next";
 buttonNextQuestion.setAttribute("id","nextQ");
 
 
@@ -325,7 +325,6 @@ function newQuestions(info){
   // buttonList.append(buttonFour);
 }
 
-console.log(getPolyatomic());
 function setCorrectButtonGreen(num){
     if(num == 0)
       buttonOne.style.backgroundColor = "green";
