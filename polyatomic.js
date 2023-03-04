@@ -83,7 +83,7 @@ let polyatomics = [
     Ammonium = {
         name: "Ammonium",
         symbol: "NH₄",
-        elements: ["N, H"],
+        elements: ["N", "H"],
         charge: "1+"
     },
   
