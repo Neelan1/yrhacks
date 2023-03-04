@@ -1,8 +1,13 @@
 let correctButton = 0;
+let correct = 0;
+let totalQuestions = 0;
+let alreadyClicked = false;
 console.log("SO₄²-");
-
+const score = document.getElementById("score-El")
 let buttonNextQuestion = document.createElement("button");
 buttonNextQuestion.textContent = "Click For Next Question";
+buttonNextQuestion.setAttribute("id","nextQ");
+
 
 const questionEl = document.getElementById("question-El");
 
@@ -10,6 +15,7 @@ const buttonOne = document.getElementById("button1-El");
 const buttonTwo = document.getElementById("button2-El");
 const buttonThree = document.getElementById("button3-El");
 const buttonFour = document.getElementById("button4-El");
+const scoreEl = document.getElementById("score-El")
 const buttonContainer = document.getElementById("buttonContainer-El");
 buttonNextQuestion.addEventListener("click", function(){
   infoArr = getPolyatomic();
@@ -18,6 +24,7 @@ buttonNextQuestion.addEventListener("click", function(){
   buttonTwo.style.backgroundColor = "white";
   buttonThree.style.backgroundColor = "white";
   buttonFour.style.backgroundColor = "white";
+  alreadyClicked = false;
   buttonNextQuestion.remove();
 })
 
@@ -176,6 +183,7 @@ return result;
 
 function getPolyatomic()
 {
+totalQuestions++;
 let randomPolyatomic = polyatomics[Math.floor(Math.random() * polyatomics.length)];
 let polyatomicArray = [];
 let polyatomicCharge = randomPolyatomic.charge.slice(0, 1);
@@ -198,49 +206,73 @@ return polyatomicArray;
 }
 
 buttonOne.addEventListener("click", function(){
+  if(!alreadyClicked){
+    console.log("AH");
+    alreadyClicked = true;
+    console.log("is clicked? " + alreadyClicked);
     if(buttonOne.textContent === infoArr[0]){
       buttonOne.style.backgroundColor = "green";
+      correct++;
       console.log("Correct");
     } 
     else{
       buttonOne.style.backgroundColor = "red";
       setCorrectButtonGreen(correctButton);
     }
-    document.body.appendChild(buttonNextQuestion);
-  })
+    scoreEl.textContent = `Your Score is ${correct}/${totalQuestions}`;
+    
+  }
+  document.body.appendChild(buttonNextQuestion);
+})
 buttonTwo.addEventListener("click", function(){
+  if(!alreadyClicked){
     if(buttonTwo.textContent === infoArr[0]){
       buttonTwo.style.backgroundColor = "green";
       console.log("Correct");
+      correct++;
     }
     else{
       buttonTwo.style.backgroundColor = "red";
       setCorrectButtonGreen(correctButton);
     }
-    document.body.appendChild(buttonNextQuestion);
-  })
+    alreadyClicked = true;
+    scoreEl.textContent = `Your Score is ${correct}/${totalQuestions}`;
+  }
+  document.body.appendChild(buttonNextQuestion);
+})
 buttonThree.addEventListener("click", function(){
+  if(!alreadyClicked){
     if(buttonThree.textContent === infoArr[0]){
       buttonThree.style.backgroundColor = "green";
       console.log("Correct");
+      correct++;
     }
     else{
       buttonThree.style.backgroundColor = "red";
       setCorrectButtonGreen(correctButton);
     }
-    document.body.appendChild(buttonNextQuestion);
-  })
+    alreadyClicked = true;
+    scoreEl.textContent = `Your Score is ${correct}/${totalQuestions}`;
+  }
+  document.body.appendChild(buttonNextQuestion);
+})
 buttonFour.addEventListener("click", function(){
+  if(!alreadyClicked){
     if(buttonFour.textContent === infoArr[0]){
       buttonFour.style.backgroundColor = "green";
       console.log("Correct");
+      correct++;
     }
     else{
       buttonFour.style.backgroundColor = "red";
       setCorrectButtonGreen(correctButton);
     }
-    document.body.appendChild(buttonNextQuestion);
-  })
+    alreadyClicked = true;
+    scoreEl.textContent = `Your Score is ${correct}/${totalQuestions}`;
+  }
+  document.body.appendChild(buttonNextQuestion);
+
+})
   
 function newQuestions(info){
   infoList = info.slice();
