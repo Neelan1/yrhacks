@@ -1,12 +1,19 @@
 let correctButton = 0;
+let correct = 0;
+let totalQuestions = 0;
+let alreadyClicked = false;
 let buttonNextQuestion = document.createElement("button");
 buttonNextQuestion.textContent = "Click For Next Question";
+butttonNextQuestion.setAttribute("id","nextQ");
+
 
 const questionEl = document.getElementById("question-El");
 const buttonOne = document.getElementById("button1-El");
 const buttonTwo = document.getElementById("button2-El");
 const buttonThree = document.getElementById("button3-El");
 const buttonFour = document.getElementById("button4-El");
+const scoreEl = document.getElementById("score-El")
+
 buttonNextQuestion.addEventListener("click", function(){
   infoArr = getElementCharge();
   newQuestions(infoArr);
@@ -14,6 +21,8 @@ buttonNextQuestion.addEventListener("click", function(){
   buttonTwo.style.backgroundColor = "white";
   buttonThree.style.backgroundColor = "white";
   buttonFour.style.backgroundColor = "white";
+  alreadyClicked = false;
+
   buttonNextQuestion.remove();
 })
 
@@ -310,50 +319,73 @@ let nonMetals = [
 
 
 buttonOne.addEventListener("click", function(){
-  if(buttonOne.textContent === infoArr[0]){
-    buttonOne.style.backgroundColor = "green";
-    console.log("Correct");
-  } 
-  else{
-    buttonOne.style.backgroundColor = "red";
-    setCorrectButtonGreen(correctButton);
+  if(!alreadyClicked){
+    console.log("AH");
+    alreadyClicked = true;
+    console.log("is clicked? " + alreadyClicked);
+    if(buttonOne.textContent === infoArr[0]){
+      buttonOne.style.backgroundColor = "green";
+      correct++;
+      console.log("Correct");
+    } 
+    else{
+      buttonOne.style.backgroundColor = "red";
+      setCorrectButtonGreen(correctButton);
+    }
+    scoreEl.textContent = `Your Score is ${correct}/${totalQuestions}`;
+    
   }
   document.body.appendChild(buttonNextQuestion);
 })
 buttonTwo.addEventListener("click", function(){
-  if(buttonTwo.textContent === infoArr[0]){
-    buttonTwo.style.backgroundColor = "green";
-    console.log("Correct");
-  }
-  else{
-    buttonTwo.style.backgroundColor = "red";
-    setCorrectButtonGreen(correctButton);
+  if(!alreadyClicked){
+    if(buttonTwo.textContent === infoArr[0]){
+      buttonTwo.style.backgroundColor = "green";
+      console.log("Correct");
+      correct++;
+    }
+    else{
+      buttonTwo.style.backgroundColor = "red";
+      setCorrectButtonGreen(correctButton);
+    }
+    alreadyClicked = true;
+    scoreEl.textContent = `Your Score is ${correct}/${totalQuestions}`;
   }
   document.body.appendChild(buttonNextQuestion);
 })
 buttonThree.addEventListener("click", function(){
-  if(buttonThree.textContent === infoArr[0]){
-    buttonThree.style.backgroundColor = "green";
-    console.log("Correct");
-  }
-  else{
-    buttonThree.style.backgroundColor = "red";
-    setCorrectButtonGreen(correctButton);
+  if(!alreadyClicked){
+    if(buttonThree.textContent === infoArr[0]){
+      buttonThree.style.backgroundColor = "green";
+      console.log("Correct");
+      correct++;
+    }
+    else{
+      buttonThree.style.backgroundColor = "red";
+      setCorrectButtonGreen(correctButton);
+    }
+    alreadyClicked = true;
+    scoreEl.textContent = `Your Score is ${correct}/${totalQuestions}`;
   }
   document.body.appendChild(buttonNextQuestion);
 })
 buttonFour.addEventListener("click", function(){
-  if(buttonFour.textContent === infoArr[0]){
-    buttonFour.style.backgroundColor = "green";
-    console.log("Correct");
-  }
-  else{
-    buttonFour.style.backgroundColor = "red";
-    setCorrectButtonGreen(correctButton);
+  if(!alreadyClicked){
+    if(buttonFour.textContent === infoArr[0]){
+      buttonFour.style.backgroundColor = "green";
+      console.log("Correct");
+      correct++;
+    }
+    else{
+      buttonFour.style.backgroundColor = "red";
+      setCorrectButtonGreen(correctButton);
+    }
+    alreadyClicked = true;
+    scoreEl.textContent = `Your Score is ${correct}/${totalQuestions}`;
   }
   document.body.appendChild(buttonNextQuestion);
-})
 
+  })
 
 
 function getElementCharge(){
