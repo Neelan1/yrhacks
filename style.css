@@ -10,25 +10,6 @@
     transition: .2s linear;
 }
 
-html{
-    overflow-x: hidden;
-    scroll-padding-top: 9rem;
-    scroll-behavior: smooth;
-}
-
-html::-webkit-scrollbar{
-    width: .8rem;
-}
-
-html::-webkit-scrollbar-track{
-    background: transparent;
-}
-
-html::-webkit-scrollbar-thumb{
-    background: #fff;
-    border-radius: 5rem;
-}
-
 body {
     background-image: url(imagesforhome/background\ img.jpg);
     background-size: cover;
@@ -67,7 +48,7 @@ nav ul li {
     margin-right: 1rem;
 }
 
-header .title {
+section .title {
     font-size: 2rem;
     margin: 0rem 3rem;
     color: white;
@@ -136,15 +117,31 @@ button {
     border-radius: 50px;
 }
  
-.btn1:active {
+.btn1:active, .btn2:active, .btn3:active, .btn4:active {
     opacity: 80%;
 }
 
-.btn1:hover {
+.btn1:hover, .btn2:hover, .btn3:hover, .btn4:hover {
     background: rgba(0, 0, 0, 0.8);
     text-decoration: underline;
     transition: 0.7s;
     border-radius: 10px;
+}
+
+.aboutUs, .aboutUsRow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
 }
 
 .questionTitle {
