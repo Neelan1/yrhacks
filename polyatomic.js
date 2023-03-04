@@ -1,3 +1,27 @@
+let correctButton = 0;
+console.log("SO₄²-");
+
+let buttonNextQuestion = document.createElement("button");
+buttonNextQuestion.textContent = "Click For Next Question";
+
+const questionEl = document.getElementById("question-El");
+
+const buttonOne = document.getElementById("button1-El");
+const buttonTwo = document.getElementById("button2-El");
+const buttonThree = document.getElementById("button3-El");
+const buttonFour = document.getElementById("button4-El");
+const buttonContainer = document.getElementById("buttonContainer-El");
+buttonNextQuestion.addEventListener("click", function(){
+  infoArr = getPolyatomic();
+  newQuestions(infoArr);
+  buttonOne.style.backgroundColor = "white";
+  buttonTwo.style.backgroundColor = "white";
+  buttonThree.style.backgroundColor = "white";
+  buttonFour.style.backgroundColor = "white";
+  buttonNextQuestion.remove();
+})
+
+
 let polyatomics = [
 
     Bromate = {
@@ -118,7 +142,7 @@ let polyatomics = [
         elements: ["C", "N"],
         charge: "1-"
     },
-  ] 
+] 
 const toSuperscript = {
     "1":"",
     "2":"²",
@@ -172,5 +196,115 @@ for(let i = 0; i < 3; i++){
 polyatomicArray.push(randomPolyatomic.name);
 return polyatomicArray;
 }
+
+buttonOne.addEventListener("click", function(){
+    if(buttonOne.textContent === infoArr[0]){
+      buttonOne.style.backgroundColor = "green";
+      console.log("Correct");
+    } 
+    else{
+      buttonOne.style.backgroundColor = "red";
+      setCorrectButtonGreen(correctButton);
+    }
+    document.body.appendChild(buttonNextQuestion);
+  })
+buttonTwo.addEventListener("click", function(){
+    if(buttonTwo.textContent === infoArr[0]){
+      buttonTwo.style.backgroundColor = "green";
+      console.log("Correct");
+    }
+    else{
+      buttonTwo.style.backgroundColor = "red";
+      setCorrectButtonGreen(correctButton);
+    }
+    document.body.appendChild(buttonNextQuestion);
+  })
+buttonThree.addEventListener("click", function(){
+    if(buttonThree.textContent === infoArr[0]){
+      buttonThree.style.backgroundColor = "green";
+      console.log("Correct");
+    }
+    else{
+      buttonThree.style.backgroundColor = "red";
+      setCorrectButtonGreen(correctButton);
+    }
+    document.body.appendChild(buttonNextQuestion);
+  })
+buttonFour.addEventListener("click", function(){
+    if(buttonFour.textContent === infoArr[0]){
+      buttonFour.style.backgroundColor = "green";
+      console.log("Correct");
+    }
+    else{
+      buttonFour.style.backgroundColor = "red";
+      setCorrectButtonGreen(correctButton);
+    }
+    document.body.appendChild(buttonNextQuestion);
+  })
+  
+function newQuestions(info){
+  infoList = info.slice();
+  console.log(infoList);
+  // const divButtons = document.getElementById("optionsContainer-El");
+  
+  //Puts all of the button elements into an array to be randomized
+  const buttonList = [buttonOne,buttonTwo,buttonThree,buttonFour];
+
+  //Loops until all the buttons have a value
+  for(let i = 0; i < 4; i++){
+    
+    //Gets a random number from 0- infoList's length
+    let randomQuestionIndex = Math.floor(Math.random() * (infoList.length-1));
+
+    
+    //sets current button from the loop to the infoList index
+    buttonList[i].textContent = infoList[randomQuestionIndex];
+    //removes the value thats been put into the button from infoList to get different values for each button
+    if(buttonList[i].textContent == info[0]){
+      correctButton = i;
+    
+      console.log(i);
+
+    }
+    infoList.splice(randomQuestionIndex,1);
+
+
+    
+   
+
+    // console.log("The info Arr is")
+    //console.log(infoArr);
+    // console.log("The infoList is")
+    // console.log(infoList)
+  }
+  console.log(infoArr);
+  questionEl.textContent = "What is the chemical formula of " + infoList[0] + "?";
+  // Element.remove(buttonOne);
+  // Element.remove(buttonTwo);
+  // Element.remove(buttonThree);
+  // Element.remove(buttonFour);
+  // buttonOne.textContent = infoList[1];
+  // buttonTwo.textContent = infoList[2];
+  // buttonThree.textContent = infoList[3];
+  // buttonFour.textContent = infoList[4];
+  // buttonList.append(buttonOne);
+  // buttonList.append(buttonTwo);
+  // buttonList.append(buttonThree);
+  // buttonList.append(buttonFour);
+}
+
 console.log(getPolyatomic());
+function setCorrectButtonGreen(num){
+    if(num == 0)
+      buttonOne.style.backgroundColor = "green";
+    if(num == 1)
+      buttonTwo.style.backgroundColor = "green";
+    if(num == 2)
+      buttonThree.style.backgroundColor = "green";
+    if(num == 3)
+      buttonFour.style.backgroundColor = "green";
+  }
+  
+  let infoArr = getPolyatomic();
+  newQuestions(infoArr);
 
