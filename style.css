@@ -13,17 +13,36 @@ body {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 100%);
 }
 
-.menu {
-    list-style-type: none;
+.menu li a{
     text-decoration: none;
     text-transform: uppercase;
 }
 
-.top {
+nav ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav ul li {
+    margin-right: 1rem;
+}
+
+header .title {
+    font-size: 2rem;
+    margin: 0rem 3rem;
+}
+
+nav {
     display: flex;
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    padding: 2rem 0rem;
+    height: 14hv;
 }
+
+
+
