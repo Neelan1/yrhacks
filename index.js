@@ -1,5 +1,4 @@
 let correctButton = 0;
-console.log("SO₄²-");
 
 let buttonNextQuestion = document.createElement("button");
 buttonNextQuestion.textContent = "Click For Next Question";
@@ -20,6 +19,8 @@ buttonNextQuestion.addEventListener("click", function(){
   buttonFour.style.backgroundColor = "white";
   buttonNextQuestion.remove();
 })
+
+
 
 let metals = [
   Hydrogen = {
@@ -68,7 +69,7 @@ let metals = [
     name: "Magnesium",
     symbol: "Mg",
     valence: 2,
-    charge: "1+"
+    charge: "2+"
   },
   Calcium = {
     name: "Calcium",
@@ -306,118 +307,63 @@ let nonMetals = [
   },
 ]
 
-let polyatomics = [
 
-  Bromate = {
-      name: "Bromate",
-      symbol: "BrO₃",
-      charge: "1+"
-  },
-
-  Iodate = {
-      name: "Iodate",
-      symbol: "IO₃",
-      charge: "1+"
-  },
-
-  Nitrate = {
-      name: "Nitrate",
-      symbol: "NO₃",
-      charge: "1+"
-  },
-
-  Chlorate = {
-      name: "Chlorate",
-      symbol: "ClO₃",
-      charge: "1+"
-  },
-
-  Sulphate = {
-      name: "Sulphate",
-      symbol: "SO₄",
-      charge: "2+"
-  },
-
-  Carbonate = {
-      name: "Carbonate",
-      symbol: "CO₃",
-      charge: "2+"
-  },
-
-  Chromate = {
-      name: "Chromate",
-      symbol: "CrO₄",
-      charge: "2+"
-  },
-
-  Phosphate = {
-      name: "Phosphate",
-      symbol: "PO₄",
-      charge: "3+"
-  },
-
-  Ammonium = {
-      name: "Ammonium",
-      symbol: "NH₄",
-      charge: "1+"
-  },
-
-  Acetate = {
-      name: "Acetate",
-      symbol: "CH₃COO",
-      charge: "1-",
-  },
-
-  Bicarbonate = {
-      name: "Bicarbonate",
-      symbol: "HCO₃",
-      charge: "1-"
-  },
-
-  Dichromate = {
-      name: "Bicarbonate",
-      symbol: "Cr₂O₇",
-      charge: "2-"
-  },
-
-  Hydroxide = {
-      name: "Hydroxide",
-      symbol: "OH",
-      charge: "1-"
-  },
-
-  Thiocyanate = {
-      name: "Thiocyanate",
-      symbol: "SCN",
-      charge: "1-"
-  },
-
-  Permanganate = {
-      name: "Permanganate",
-      symbol: "MnO₄",
-      charge: "1-"
-  },
-
-  Cyanate = {
-      name: "Cyanate",
-      symbol: "OCN",
-      charge: "1-"
-  },
-
-  Cyanide = {
-      name: "Cyanide",
-      symbol: "CN",
-      charge: "1-"
-  },
-] 
 
 const buttonsDiv = document.getElementById("buttonDiv-El");
+const toSuperscript = {
+  "1":"",
+  "2":"²",
+  "3":"³"
+}
 
 
-console.log(metals[0].name);
-console.log(polyatomics[0].name);
+const toSubscript = {
+  "+":"⁺",
+  "-":"⁻",
+  "1":"",
+  "2":"₂",
+  "3":"₃",
+  "4":"₄",
+  "5":"₅",
+  "6":"₆",
+  "7":"⁺", 
+  "8":"⁻"
+}
+function getRandomPolyatomic(polyatomicElements)
+{
+  let result = "";
+  result += `${polyatomicElements[0]}${toSubscript[(Math.floor((Math.random() * 1)) + 1).toString()]}`;  
+  for(let i = 1; i < polyatomicElements.length; i++){
+    result += `${polyatomicElements[i]}${toSubscript[(Math.floor((Math.random() * 3)) + 1).toString()]}`; 
+    
+  }
+  result += `${toSuperscript[(Math.floor((Math.random() * 3)) + 1).toString()]}${toSubscript[(Math.floor((Math.random() * 2)) + 7).toString()]}` 
+  return result;
+}
 
+function getPolyatomic()
+{
+  let randomPolyatomic = polyatomics[Math.floor(Math.random() * polyatomics.length)];
+  let polyatomicArray = [];
+  let polyatomicCharge = randomPolyatomic.charge.slice(0, 1);
+  let polyatomicSign = randomPolyatomic.charge.slice(1);
+  polyatomicArray.push(`${randomPolyatomic.symbol}${toSuperscript[polyatomicCharge]}${toSubscript[polyatomicSign]}`);
 
+  let wrongPolyatomic;
+  for(let i = 0; i < 3; i++){
+
+    wrongPolyatomic = getRandomPolyatomic(randomPolyatomic.elements); //ssssFm
+    if(polyatomicArray.indexOf(wrongPolyatomic) != -1){
+      while(polyatomicArray.indexOf(wrongPolyatomic) != -1){
+        wrongPolyatomic = getRandomPolyatomic(randomPolyatomic.elements);
+      }
+    }
+    polyatomicArray.push(wrongPolyatomic);
+  }
+  polyatomicArray.push(randomPolyatomic.name);
+  return polyatomicArray;
+}
+console.log(getPolyatomic());
 function getIonicCompound (){
   let randomMetal = Math.floor(Math.random() * metals.length);
   let randomNonMetal = Math.floor(Math.random() * nonMetals.length);
@@ -465,8 +411,9 @@ function getIonicCompound (){
   }
   
   
-  
+
   questionArray.push(ionicCompound);
+  
   return questionArray;
 }
 
@@ -589,4 +536,5 @@ function setCorrectButtonGreen(num){
 
 let infoArr = getIonicCompound();
 newQuestions(infoArr);
+
 
