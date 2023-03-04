@@ -446,4 +446,87 @@ function getIonicCompound (){
   console.log(questionArray);
   return questionArray;
 }
-getIonicCompound();
+
+
+
+const buttonOne = document.getElementById("button1-El");
+const buttonTwo = document.getElementById("button2-El");
+const buttonThree = document.getElementById("button3-El");
+const buttonFour = document.getElementById("button4-El");
+
+buttonOne.addEventListener("click", function(){
+  if(buttonOne.textContent == infoList[1]){
+    buttonOne.style.color("green");
+  } 
+  else{
+    buttonOne.style.color("red");
+  }
+  infoList = getIonicCompoind();
+  newQuestions(infoList);
+})
+buttonTwo.addEventListener("click", function(){
+  if(buttonTwo.textContent == infoList[1]){
+    buttonTwo.style.color("green");
+  }
+  else{
+    buttonTwo.style.color("red");
+  }
+  infoList = getIonicCompoind();
+  newQuestions(infoList);
+})
+buttonThree.addEventListener("click", function(){
+  if(buttonThree.textContent == infoList[1]){
+    buttonThree.style.color("green");
+  }
+  else{
+    buttonThree.style.color("red");
+  }
+  infoList = getIonicCompoind();
+  newQuestions(infoList);
+})
+buttonFour.addEventListener("click", function(){
+  if(buttonFour.textContent == infoList[1]){
+    buttonFour.style.color("green");
+  }
+  else{
+    buttonFour.style.color("red");
+  }
+  infoList = getIonicCompoind();
+  newQuestions(infoList);
+})
+
+
+
+
+
+function newQuestions(infoList){
+  const divButtons = document.getElementById("optionsContainer-El");
+  
+  //Puts all of the button elements into an array to be randomized
+  const buttonList = [buttonOne,buttonTwo,buttonThree,buttonFour];
+
+  //Loops until all the buttons have a value
+  for(let i = 0; i < 4; i++){
+    //Gets a random number from 0- infoList's length
+    let randomQuestionIndex = Math.random() * infoList.length
+
+    //sets current button from the loop to the infoList index
+    buttonList[i].textContent = infoList[randomQuestionIndex];
+    //removes the value thats been put into the button from infoList to get different values for each button
+    infoList.slice(randomQuestionIndex,1);
+  }
+
+  // Element.remove(buttonOne);
+  // Element.remove(buttonTwo);
+  // Element.remove(buttonThree);
+  // Element.remove(buttonFour);
+  // buttonOne.textContent = infoList[1];
+  // buttonTwo.textContent = infoList[2];
+  // buttonThree.textContent = infoList[3];
+  // buttonFour.textContent = infoList[4];
+  // buttonList.append(buttonOne);
+  // buttonList.append(buttonTwo);
+  // buttonList.append(buttonThree);
+  // buttonList.append(buttonFour);
+
+}
