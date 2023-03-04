@@ -153,7 +153,10 @@ let polyatomics = [
 const toSuperscript = {
     "1":"",
     "2":"²",
-    "3":"³"
+    "3":"³",
+    "4":"",
+    "5":"",
+    
 }
 
 
@@ -167,7 +170,9 @@ const toSubscript = {
     "5":"₅",
     "6":"₆",
     "7":"⁺", 
-    "8":"⁻"
+    "8":"⁻",
+    "9":"⁻", 
+    "10":"⁻" 
 }
 function getRandomPolyatomic(polyatomicElements)
 {
@@ -177,7 +182,7 @@ for(let i = 1; i < polyatomicElements.length; i++){
     result += `${polyatomicElements[i]}${toSubscript[(Math.floor((Math.random() * 3)) + 1).toString()]}`; 
     
 }
-result += `${toSuperscript[(Math.floor((Math.random() * 3)) + 1).toString()]}${toSubscript[(Math.floor((Math.random() * 2)) + 7).toString()]}` 
+result += `${toSuperscript[(Math.floor((Math.random() * 5)) + 1).toString()]}${toSubscript[(Math.floor((Math.random() * 4)) + 7).toString()]}` 
 return result;
 }
 
