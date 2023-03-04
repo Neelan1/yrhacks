@@ -1,3 +1,4 @@
+let correctButton = 0;
 console.log("SO₄²-");
 
 
@@ -435,7 +436,7 @@ function getIonicCompound (){
   correctIonic = `${metal.symbol}${subscripts[nonMetalCharge]}${nonMetal.symbol}${subscripts[metalCharge]}`;
   questionArray.push(correctIonic);
   let wrongIonic;
-  for(i = 0; i < 4; i++){
+  for(i = 0; i < 3; i++){
     wrongIonic = `${metal.symbol}${subscripts[Math.floor((Math.random() * 6)) + 1]}${nonMetal.symbol}${subscripts[Math.floor((Math.random() * 6)) + 1]}`;
     if(questionArray.indexOf(wrongIonic) != -1){
       while(questionArray.indexOf(wrongIonic) != -1){
@@ -453,12 +454,14 @@ function getIonicCompound (){
 
 
 
-
+const questionEl = document.getElementById("question-El");
 
 const buttonOne = document.getElementById("button1-El");
 const buttonTwo = document.getElementById("button2-El");
 const buttonThree = document.getElementById("button3-El");
 const buttonFour = document.getElementById("button4-El");
+
+
 
 buttonOne.addEventListener("click", function(){
   if(buttonOne.textContent === infoArr[0]){
@@ -466,7 +469,8 @@ buttonOne.addEventListener("click", function(){
     console.log("Correct");
   } 
   else{
-    //buttonOne.style.backgroundColor("red");
+    buttonOne.style.backgroundColor = "red";
+    setCorrectButtonGreen(correctButton);
   }
   infoArr = getIonicCompound();
   newQuestions(infoArr);
@@ -477,7 +481,8 @@ buttonTwo.addEventListener("click", function(){
     console.log("Correct");
   }
   else{
-    //buttonTwo.style.backgroundColor("red");
+    buttonTwo.style.backgroundColor = "red";
+    setCorrectButtonGreen(correctButton);
   }
   infoArr = getIonicCompound();
   newQuestions(infoArr);
@@ -488,7 +493,8 @@ buttonThree.addEventListener("click", function(){
     console.log("Correct");
   }
   else{
-    //buttonThree.style.backgroundColor("red");
+    buttonThree.style.backgroundColor = "red";
+    setCorrectButtonGreen(correctButton);
   }
   infoArr = getIonicCompound();
   newQuestions(infoArr);
@@ -499,7 +505,8 @@ buttonFour.addEventListener("click", function(){
     console.log("Correct");
   }
   else{
-    //buttonFour.style.backgroundColor("red");
+    buttonFour.style.backgroundColor = "red";
+    setCorrectButtonGreen(correctButton);
   }
   infoArr = getIonicCompound();
   newQuestions(infoArr);
@@ -527,19 +534,25 @@ function newQuestions(info){
     //sets current button from the loop to the infoList index
     buttonList[i].textContent = infoList[randomQuestionIndex];
     //removes the value thats been put into the button from infoList to get different values for each button
+    if(buttonList[i].textContent == info[0]){
+      correctButton = i;
+    
+      console.log(i);
+
+    }
     infoList.splice(randomQuestionIndex,1);
 
 
     
    
 
-    console.log("The info Arr is")
-    console.log(infoArr);
-    console.log("The infoList is")
-    console.log(infoList)
+    // console.log("The info Arr is")
+    //console.log(infoArr);
+    // console.log("The infoList is")
+    // console.log(infoList)
   }
-  
-
+  console.log(infoArr);
+  questionEl.textContent = "What is the chemical formula of " + infoList[0] + "?";
   // Element.remove(buttonOne);
   // Element.remove(buttonTwo);
   // Element.remove(buttonThree);
@@ -552,9 +565,18 @@ function newQuestions(info){
   // buttonList.append(buttonTwo);
   // buttonList.append(buttonThree);
   // buttonList.append(buttonFour);
-
 }
 
+function setCorrectButtonGreen(num){
+  if(num == 0)
+    buttonOne.style.backgroundColor = "green";
+  if(num == 1)
+    buttonTwo.style.backgroundColor = "green";
+  if(num == 2)
+    buttonThree.style.backgroundColor = "green";
+  if(num == 3)
+    buttonFour.style.backgroundColor = "green";
+}
 
 
 let infoArr = getIonicCompound();
