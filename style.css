@@ -164,15 +164,55 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 15%;
-    background-color: white;
-    width: 50%;
+    margin-top: 5%;
     margin-left: 25%;
     border-radius: 50px;
+    width: 50%;
+    background: white;
 }
 
-.sources {
-    list-style-type: none;
+.titleSource {
+    font-size: 2rem;
+}
+
+.titleSource h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cheung {
+    padding: 160px;
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 8%;
+    background-color: #cac4c4;
+    color: rgba(0, 0, 0, 100);
+    opacity: 80%;
+    border-radius: 50%;
+}
+
+
+.courses {
+    position: absolute;
+    padding: 160px;
+    margin-left: 33%;
+    margin-top: 8%;
+    background-color: #cac4c4;
+    color: rgba(0, 0, 0, 100);
+    opacity: 80%;
+    border-radius: 50%;
+}
+
+.oct {
+    position: absolute;
+    padding: 160px;
+    margin-left: 64%;
+    margin-top: 8%;
+    background-color: #cac4c4;
+    color: rgba(0, 0, 0, 100);
+    opacity: 80%;
+    border-radius: 50%;
 }
 
 .questionTitle {
@@ -182,6 +222,8 @@ button {
     font-size: 4rem;
     padding-bottom: 70px;
 }
+
+
 
 .questionContainer {
     box-sizing: border-box;
