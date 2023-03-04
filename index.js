@@ -1,6 +1,6 @@
 console.log("SO₄²-");
-let infoArr = getIonicCompound();
-newQuestions(infoArr);
+
+
 
 let metals = [
   Hydrogen = {
@@ -531,3 +531,10 @@ function newQuestions(infoList){
   // buttonList.append(buttonFour);
 
 }
+
+
+
+let infoArr = getIonicCompound();
+newQuestions(infoArr);
+
+console.log(infoArr);
