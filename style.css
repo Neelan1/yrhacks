@@ -10,11 +10,7 @@
     transition: .2s linear;
 }
 
-@media (-webkit-device-pixel-ratio: 1.25) {
-    * {
-      zoom: 0.8;
-    }
-  }
+
 
 body {
     background-image: url(imagesforhome/background\ img.jpg);
