@@ -1,3 +1,5 @@
+
+
 console.log("SO₄²-");
 
 
@@ -88,133 +90,133 @@ let metals = [
   },
   Copper1 = {
     name: "Cuperous",
-    symbol: "Cu(I)",
+    symbol: "Cu",
     valence: 1,
     charge: "1+"
   },
   Copper2 = {
     name: "Cuperic",
-    symbol: "Cu(II)",
+    symbol: "Cu",
     valence: 2,
     charge: "2+"
   },
   Iron2 = {
     name: "Ferrous",
-    symbol: "Fe(II)",
+    symbol: "Fe",
     valence: 2,
     charge: "2+"
   },
   Iron3= {
     name: "Ferric",
-    symbol: "Fe(III)",
+    symbol: "Fe",
     valence: 3,
     charge: "3+"
   },
   Tin2 = {
     name: "Stannous",
-    symbol: "Sn(II)",
+    symbol: "Sn",
     valence: 2,
     charge: "2+"
   },
   Tin4= {
     name: "Stannic",
-    symbol: "Sn(IV)",
+    symbol: "Sn",
     valence: 4,
     charge: "4+"
   },
   Lead2 = {
     name: "Plumbous",
-    symbol: "Pb(II)",
+    symbol: "Pb",
     valence: 2,
     charge: "2+"
   },
   Lead4 = {
     name: "Plumbic",
-    symbol: "Pb(IV)",
+    symbol: "Pb",
     valence: 4,
     charge: "4+"
   },
   Gold1 = {
     name: "Aurous",
-    symbol: "Au(I)",
+    symbol: "Au",
     valence: 1,
     charge: "1+"
   },
   Gold3 = {
     name: "Auric",
-    symbol: "Au(III)",
+    symbol: "Au",
     valence: 3,
     charge: "3+"
   },
   Mercury1 = {
     name: "Mercurous",
-    symbol: "Hg(I)",
+    symbol: "Hg",
     valence: 1,
     charge: "1+"
   },
   Mercury2 = {
     name: "Mercuric",
-    symbol: "Hg(II)",
+    symbol: "Hg",
     valence: 2,
     charge: "2+"
   },
   Antimony3 = {
     name: "Stibnous",
-    symbol: "Sb(III)",
+    symbol: "Sb",
     valence: 3,
     charge: "3+"
   },
   Antimony5 = {
     name: "Stibnic",
-    symbol: "Sb(V)",
+    symbol: "Sb",
     valence: 5,
     charge: "5+"
   },
   Nickel2 = {
     name: "Nickelous",
-    symbol: "Ni(II)",
+    symbol: "Ni",
     valence: 2,
     charge: "2+"
   },
   Nickel3 = {
     name: "Nickelic",
-    symbol: "Ni(III)",
+    symbol: "Ni",
     valence: 3,
     charge: "3+"
   },
   Cobalt2 = {
     name: "Cobaltous",
-    symbol: "Co(II)",
+    symbol: "Co",
     valence: 2,
     charge: "2+"
   },
   Cobalt3 = {
     name: "Cobaltic",
-    symbol: "Co(III)",
+    symbol: "Co",
     valence: 3,
     charge: "3+"
   },
   Manganese2 = {
     name: "Manganous",
-    symbol: "Mn(II)",
+    symbol: "Mn",
     valence: 2,
     charge: "2+"
   },
   Manganese4 = {
     name: "Manganic",
-    symbol: "Mn(IV)",
+    symbol: "Mn",
     valence: 4,
     charge: "4+"
   },
   Arsenic3 = {
     name: "Arsenous",
-    symbol: "As(III)",
+    symbol: "As",
     valence: 3,
     charge: "3+"
   },
   Arsenic5 = {
     name: "Arsenic",
-    symbol: "As(V)",
+    symbol: "As",
     valence: 5,
     charge: "5+"
   }
@@ -397,14 +399,51 @@ const buttonsDiv = document.getElementById("buttonDiv-El");
 console.log(metals[0].name);
 console.log(polyatomics[0].name);
 
-document.createElement()
-
 
 function getIonicCompound (){
-  let randomMetal = Math.random() * metals.length();
-  let randomNonMetal = Math.random() * nonMetals.length();
-
-  let ionicCompound = metals[randomMetal].name + nonMetals[randomNonMetal].ionicCompoundEnd;
-
+  let randomMetal = Math.floor(Math.random() * metals.length);
+  let randomNonMetal = Math.floor(Math.random() * nonMetals.length);
+  const subscripts = ["sdasd", "","₂","₃","₄","₅","₆","₇","₈","₉"];
+  const metal = metals[randomMetal];
+  const nonMetal = nonMetals[randomNonMetal];
+  let ionicCompound = `${metal.name} ${nonMetal.ionicCompoundEnd}`;
+  const questionArray = [];
   
+  let correctIonic = "";
+  let metalCharge = parseInt(metal.charge.slice(0, 1));
+  let nonMetalCharge = parseInt(nonMetal.charge.slice(0, 1));
+  if(metalCharge % 5 == 0 && nonMetalCharge % 5 == 0 )
+  {
+     metalCharge = metalCharge/5;
+     nonMetalCharge = nonMetalCharge/5; 
+  }
+  else if(metalCharge % 4 == 0 && nonMetalCharge % 4 == 0 ){
+    metalCharge = metalCharge/4;
+    nonMetalCharge = nonMetalCharge/4; 
+
+  }
+  else if(metalCharge % 3 == 0 && nonMetalCharge % 3 == 0 ){
+    metalCharge = metalCharge/3;
+    nonMetalCharge = nonMetalCharge/3; 
+
+  }
+  else if(metalCharge % 2 == 0 && nonMetalCharge % 2 == 0 ){
+    
+    metalCharge = metalCharge/2;
+    nonMetalCharge = nonMetalCharge/2; 
+
+  }
+  questionArray.push(correctIonic);
+  let wrongIonic;
+  for(i = 0; i < 4; i++){
+    wrongIonic = `${metal.symbol}${subscripts[Math.floor((Math.random() * 6)) + 1]}${nonMetal.symbol}${subscripts[Math.floor((Math.random() * 6)) + 1]}`;
+    questionArray.push(wrongIonic);
+  }
+  
+  
+  correctIonic = `${metal.symbol}${subscripts[nonMetalCharge]}${nonMetal.symbol}${subscripts[metalCharge]}`;
+  questionArray.push(ionicCompound);
+  console.log(questionArray);
+  return questionArray;
 }
+getIonicCompound();
