@@ -1,7 +1,25 @@
 let correctButton = 0;
 console.log("SO₄²-");
 
+let buttonNextQuestion = document.createElement("button");
+buttonNextQuestion.textContent = "Click For Next Question";
 
+const questionEl = document.getElementById("question-El");
+
+const buttonOne = document.getElementById("button1-El");
+const buttonTwo = document.getElementById("button2-El");
+const buttonThree = document.getElementById("button3-El");
+const buttonFour = document.getElementById("button4-El");
+const buttonContainer = document.getElementById("buttonContainer-El");
+buttonNextQuestion.addEventListener("click", function(){
+  infoArr = getIonicCompound();
+  newQuestions(infoArr);
+  buttonOne.style.backgroundColor = "white";
+  buttonTwo.style.backgroundColor = "white";
+  buttonThree.style.backgroundColor = "white";
+  buttonFour.style.backgroundColor = "white";
+  buttonNextQuestion.remove();
+})
 
 let metals = [
   Hydrogen = {
@@ -454,12 +472,6 @@ function getIonicCompound (){
 
 
 
-const questionEl = document.getElementById("question-El");
-
-const buttonOne = document.getElementById("button1-El");
-const buttonTwo = document.getElementById("button2-El");
-const buttonThree = document.getElementById("button3-El");
-const buttonFour = document.getElementById("button4-El");
 
 
 
@@ -472,8 +484,7 @@ buttonOne.addEventListener("click", function(){
     buttonOne.style.backgroundColor = "red";
     setCorrectButtonGreen(correctButton);
   }
-  infoArr = getIonicCompound();
-  newQuestions(infoArr);
+  document.body.appendChild(buttonNextQuestion);
 })
 buttonTwo.addEventListener("click", function(){
   if(buttonTwo.textContent === infoArr[0]){
@@ -484,8 +495,7 @@ buttonTwo.addEventListener("click", function(){
     buttonTwo.style.backgroundColor = "red";
     setCorrectButtonGreen(correctButton);
   }
-  infoArr = getIonicCompound();
-  newQuestions(infoArr);
+  document.body.appendChild(buttonNextQuestion);
 })
 buttonThree.addEventListener("click", function(){
   if(buttonThree.textContent === infoArr[0]){
@@ -496,8 +506,7 @@ buttonThree.addEventListener("click", function(){
     buttonThree.style.backgroundColor = "red";
     setCorrectButtonGreen(correctButton);
   }
-  infoArr = getIonicCompound();
-  newQuestions(infoArr);
+  document.body.appendChild(buttonNextQuestion);
 })
 buttonFour.addEventListener("click", function(){
   if(buttonFour.textContent === infoArr[0]){
@@ -508,9 +517,9 @@ buttonFour.addEventListener("click", function(){
     buttonFour.style.backgroundColor = "red";
     setCorrectButtonGreen(correctButton);
   }
-  infoArr = getIonicCompound();
-  newQuestions(infoArr);
+  document.body.appendChild(buttonNextQuestion);
 })
+
 
 
 
@@ -577,7 +586,6 @@ function setCorrectButtonGreen(num){
   if(num == 3)
     buttonFour.style.backgroundColor = "green";
 }
-
 
 let infoArr = getIonicCompound();
 newQuestions(infoArr);
