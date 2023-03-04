@@ -74,8 +74,8 @@ button {
 .intro-info {
     padding: 160px;
     position: absolute;
-    margin-left: 100px;
-    margin-top: 150px;
+    margin-left: 10%;
+    margin-top: 8%;
     background-color: #cac4c4;
     color: rgba(0, 0, 0, 100);
     opacity: 80%;
@@ -99,7 +99,7 @@ button {
 .container {
     width: fit-content;
     margin: 200px auto;
-    margin-right: 300px;
+    margin-right: 15%;
 }
 
 .btn {
