@@ -320,13 +320,10 @@ let nonMetals = [
 
 buttonOne.addEventListener("click", function(){
   if(!alreadyClicked){
-    console.log("AH");
     alreadyClicked = true;
-    console.log("is clicked? " + alreadyClicked);
-    if(buttonOne.textContent === infoArr[0]){
+    if(buttonOne.textContent == infoArr[0]){
       buttonOne.style.backgroundColor = "green";
       correct++;
-      console.log("Correct");
     } 
     else{
       buttonOne.style.backgroundColor = "red";
@@ -339,9 +336,9 @@ buttonOne.addEventListener("click", function(){
 })
 buttonTwo.addEventListener("click", function(){
   if(!alreadyClicked){
-    if(buttonTwo.textContent === infoArr[0]){
+    if(buttonTwo.textContent == infoArr[0]){
+
       buttonTwo.style.backgroundColor = "green";
-      console.log("Correct");
       correct++;
     }
     else{
@@ -355,7 +352,7 @@ buttonTwo.addEventListener("click", function(){
 })
 buttonThree.addEventListener("click", function(){
   if(!alreadyClicked){
-    if(buttonThree.textContent === infoArr[0]){
+    if(buttonThree.textContent == infoArr[0]){
       buttonThree.style.backgroundColor = "green";
       console.log("Correct");
       correct++;
@@ -371,9 +368,8 @@ buttonThree.addEventListener("click", function(){
 })
 buttonFour.addEventListener("click", function(){
   if(!alreadyClicked){
-    if(buttonFour.textContent === infoArr[0]){
+    if(buttonFour.textContent == infoArr[0]){
       buttonFour.style.backgroundColor = "green";
-      console.log("Correct");
       correct++;
     }
     else{
@@ -421,8 +417,8 @@ function getElementCharge(){
 
 
 function newQuestions(info){
+  totalQuestions++;
   infoList = info.slice();
-  console.log("Here");
   console.log(infoList);
   // const divButtons = document.getElementById("optionsContainer-El");
   

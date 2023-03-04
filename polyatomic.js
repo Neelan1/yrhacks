@@ -325,7 +325,6 @@ function newQuestions(info){
   // buttonList.append(buttonFour);
 }
 
-console.log(getPolyatomic());
 function setCorrectButtonGreen(num){
     if(num == 0)
       buttonOne.style.backgroundColor = "green";
