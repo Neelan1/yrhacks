@@ -432,6 +432,7 @@ function getIonicCompound (){
     nonMetalCharge = nonMetalCharge/2; 
 
   }
+  correctIonic = `${metal.symbol}${subscripts[nonMetalCharge]}${nonMetal.symbol}${subscripts[metalCharge]}`;
   questionArray.push(correctIonic);
   let wrongIonic;
   for(i = 0; i < 4; i++){
@@ -440,7 +441,7 @@ function getIonicCompound (){
   }
   
   
-  correctIonic = `${metal.symbol}${subscripts[nonMetalCharge]}${nonMetal.symbol}${subscripts[metalCharge]}`;
+  
   questionArray.push(ionicCompound);
   console.log(questionArray);
   return questionArray;
