@@ -493,40 +493,40 @@ const buttonFour = document.getElementById("button4-El");
 
 buttonOne.addEventListener("click", function(){
   if(buttonOne.textContent == infoList[1]){
-    
-  }
+    buttonOne.style.color("green");
+  } 
   else{
-
+    buttonOne.style.color("red");
   }
   infoList = getIonicCompoind();
   newQuestions(infoList);
 })
 buttonTwo.addEventListener("click", function(){
   if(buttonTwo.textContent == infoList[1]){
-    
+    buttonTwo.style.color("green");
   }
   else{
-
+    buttonTwo.style.color("red");
   }
   infoList = getIonicCompoind();
   newQuestions(infoList);
 })
 buttonThree.addEventListener("click", function(){
   if(buttonThree.textContent == infoList[1]){
-    
+    buttonThree.style.color("green");
   }
   else{
-
+    buttonThree.style.color("red");
   }
   infoList = getIonicCompoind();
   newQuestions(infoList);
 })
 buttonFour.addEventListener("click", function(){
   if(buttonFour.textContent == infoList[1]){
-    
+    buttonFour.style.color("green");
   }
   else{
-
+    buttonFour.style.color("red");
   }
   infoList = getIonicCompoind();
   newQuestions(infoList);
