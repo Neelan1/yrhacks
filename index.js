@@ -443,7 +443,6 @@ function getIonicCompound (){
   
   
   questionArray.push(ionicCompound);
-  console.log(questionArray);
   return questionArray;
 }
 
@@ -458,42 +457,42 @@ const buttonFour = document.getElementById("button4-El");
 
 buttonOne.addEventListener("click", function(){
   if(buttonOne.textContent == infoArr[0]){
-    buttonOne.style.color("green");
+    //buttonOne.style.backgroundColor("green");
   } 
   else{
-    buttonOne.style.color("red");
+    //buttonOne.style.backgroundColor("red");
   }
-  infoArr = getIonicCompoind();
+  infoArr = getIonicCompound();
   newQuestions(infoArr);
 })
 buttonTwo.addEventListener("click", function(){
   if(buttonTwo.textContent == infoArr[0]){
-    buttonTwo.style.color("green");
+    //buttonTwo.style.backgroundColor("green");
   }
   else{
-    buttonTwo.style.color("red");
+    //buttonTwo.style.backgroundColor("red");
   }
-  infoArr = getIonicCompoind();
+  infoArr = getIonicCompound();
   newQuestions(infoArr);
 })
 buttonThree.addEventListener("click", function(){
   if(buttonThree.textContent == infoArr[0]){
-    buttonThree.style.color("green");
+    //buttonThree.style.backgroundColor("green");
   }
   else{
-    buttonThree.style.color("red");
+    //buttonThree.style.backgroundColor("red");
   }
-  infoArr = getIonicCompoind();
+  infoArr = getIonicCompound();
   newQuestions(infoArr);
 })
 buttonFour.addEventListener("click", function(){
   if(buttonFour.textContent == infoArr[0]){
-    buttonFour.style.color("green");
+    //buttonFour.style.backgroundColor("green");
   }
   else{
-    buttonFour.style.color("red");
+    //buttonFour.style.backgroundColor("red");
   }
-  infoArr = getIonicCompoind();
+  infoArr = getIonicCompound();
   newQuestions(infoArr);
 })
 
@@ -502,21 +501,33 @@ buttonFour.addEventListener("click", function(){
 
 
 function newQuestions(infoList){
-  const divButtons = document.getElementById("optionsContainer-El");
+
+  
+  // const divButtons = document.getElementById("optionsContainer-El");
   
   //Puts all of the button elements into an array to be randomized
   const buttonList = [buttonOne,buttonTwo,buttonThree,buttonFour];
 
   //Loops until all the buttons have a value
   for(let i = 0; i < 4; i++){
+    
     //Gets a random number from 0- infoList's length
-    let randomQuestionIndex = Math.random() * infoList.length
+    let randomQuestionIndex = Math.floor(Math.random() * (infoList.length-1));
 
+    
     //sets current button from the loop to the infoList index
     buttonList[i].textContent = infoList[randomQuestionIndex];
     //removes the value thats been put into the button from infoList to get different values for each button
-    infoList.slice(randomQuestionIndex,1);
+    infoList.splice(randomQuestionIndex,1);
+
+
+    
+   
+
+    
+    
   }
+  
 
   // Element.remove(buttonOne);
   // Element.remove(buttonTwo);
@@ -538,4 +549,3 @@ function newQuestions(infoList){
 let infoArr = getIonicCompound();
 newQuestions(infoArr);
 
-console.log(infoArr);
