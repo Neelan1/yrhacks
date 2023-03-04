@@ -1,4 +1,24 @@
+let correctButton = 0;
 
+let buttonNextQuestion = document.createElement("button");
+buttonNextQuestion.textContent = "Click For Next Question";
+
+const questionEl = document.getElementById("question-El");
+
+const buttonOne = document.getElementById("button1-El");
+const buttonTwo = document.getElementById("button2-El");
+const buttonThree = document.getElementById("button3-El");
+const buttonFour = document.getElementById("button4-El");
+const buttonContainer = document.getElementById("buttonContainer-El");
+buttonNextQuestion.addEventListener("click", function(){
+  infoArr = getIonicCompound();
+  newQuestions(infoArr);
+  buttonOne.style.backgroundColor = "white";
+  buttonTwo.style.backgroundColor = "white";
+  buttonThree.style.backgroundColor = "white";
+  buttonFour.style.backgroundColor = "white";
+  buttonNextQuestion.remove();
+})
 
 
 
@@ -287,127 +307,7 @@ let nonMetals = [
   },
 ]
 
-let polyatomics = [
 
-  Bromate = {
-      name: "Bromate",
-      symbol: "BrO₃",
-      elements: ["Br", "O"],
-      charge: "1-"
-  },
-
-  Iodate = {
-      name: "Iodate",
-      symbol: "IO₃",
-      elements: ["I", "O"],
-      charge: "1-"
-  },
-
-  Nitrate = {
-      name: "Nitrate",
-      symbol: "NO₃",
-      elements: ["N", "O"],
-      charge: "1-"
-  },
-
-  Chlorate = {
-      name: "Chlorate",
-      symbol: "ClO₃",
-      elements: ["Cl", "O"],
-      charge: "1-"
-  },
-
-  Sulphate = {
-      name: "Sulphate",
-      symbol: "SO₄",
-      elements: ["S", "O"],
-      charge: "2-"
-  },
-
-  Carbonate = {
-      name: "Carbonate",
-      symbol: "CO₃",
-      elements: ["C", "O"],
-      charge: "2-"
-  },
-
-  Chromate = {
-      name: "Chromate",
-      symbol: "CrO₄",
-      elements: ["Cr", "O"],
-      charge: "2-"
-  },
-
-  Phosphate = {
-      name: "Phosphate",
-      symbol: "PO₄",
-      elements: ["P", "O"],
-      charge: "3-"
-  },
-
-  Ammonium = {
-      name: "Ammonium",
-      symbol: "NH₄",
-      elements: ["N, H"],
-      charge: "1+"
-  },
-
-  Acetate = {
-      name: "Acetate",
-      symbol: "CH₃COO",
-      elements: ["C", "H", "C", "O", "O"],
-      charge: "1-",
-  },
-
-  Bicarbonate = {
-      name: "Bicarbonate",
-      symbol: "HCO₃",
-      elements: ["H", "C", "O"],
-      charge: "1-"
-  },
-
-  Dichromate = {
-      name: "Dichromate",
-      symbol: "Cr₂O₇",
-      elements: ["Cr", "O"],
-      charge: "2-"
-  },
-
-  Hydroxide = {
-      name: "Hydroxide",
-      symbol: "OH",
-      elements: ["O", "H"],
-      charge: "1-"
-  },
-
-  Thiocyanate = {
-      name: "Thiocyanate",
-      symbol: "SCN",
-      elements: ["S", "C", "N"],
-      charge: "1-"
-  },
-
-  Permanganate = {
-      name: "Permanganate",
-      symbol: "MnO₄",
-      elements: ["Mn", "O"],
-      charge: "1-"
-  },
-
-  Cyanate = {
-      name: "Cyanate",
-      symbol: "OCN",
-      elements: ["O", "C", "N"],
-      charge: "1-"
-  },
-
-  Cyanide = {
-      name: "Cyanide",
-      symbol: "CN",
-      elements: ["C", "N"],
-      charge: "1-"
-  },
-] 
 
 const buttonsDiv = document.getElementById("buttonDiv-El");
 const toSuperscript = {
@@ -500,7 +400,7 @@ function getIonicCompound (){
   correctIonic = `${metal.symbol}${subscripts[nonMetalCharge]}${nonMetal.symbol}${subscripts[metalCharge]}`;
   questionArray.push(correctIonic);
   let wrongIonic;
-  for(i = 0; i < 4; i++){
+  for(i = 0; i < 3; i++){
     wrongIonic = `${metal.symbol}${subscripts[Math.floor((Math.random() * 6)) + 1]}${nonMetal.symbol}${subscripts[Math.floor((Math.random() * 6)) + 1]}`;
     if(questionArray.indexOf(wrongIonic) != -1){
       while(questionArray.indexOf(wrongIonic) != -1){
@@ -521,10 +421,6 @@ function getIonicCompound (){
 
 
 
-const buttonOne = document.getElementById("button1-El");
-const buttonTwo = document.getElementById("button2-El");
-const buttonThree = document.getElementById("button3-El");
-const buttonFour = document.getElementById("button4-El");
 
 buttonOne.addEventListener("click", function(){
   if(buttonOne.textContent === infoArr[0]){
@@ -532,10 +428,10 @@ buttonOne.addEventListener("click", function(){
     console.log("Correct");
   } 
   else{
-    //buttonOne.style.backgroundColor("red");
+    buttonOne.style.backgroundColor = "red";
+    setCorrectButtonGreen(correctButton);
   }
-  infoArr = getIonicCompound();
-  newQuestions(infoArr);
+  document.body.appendChild(buttonNextQuestion);
 })
 buttonTwo.addEventListener("click", function(){
   if(buttonTwo.textContent === infoArr[0]){
@@ -543,10 +439,10 @@ buttonTwo.addEventListener("click", function(){
     console.log("Correct");
   }
   else{
-    //buttonTwo.style.backgroundColor("red");
+    buttonTwo.style.backgroundColor = "red";
+    setCorrectButtonGreen(correctButton);
   }
-  infoArr = getIonicCompound();
-  newQuestions(infoArr);
+  document.body.appendChild(buttonNextQuestion);
 })
 buttonThree.addEventListener("click", function(){
   if(buttonThree.textContent === infoArr[0]){
@@ -554,10 +450,10 @@ buttonThree.addEventListener("click", function(){
     console.log("Correct");
   }
   else{
-    //buttonThree.style.backgroundColor("red");
+    buttonThree.style.backgroundColor = "red";
+    setCorrectButtonGreen(correctButton);
   }
-  infoArr = getIonicCompound();
-  newQuestions(infoArr);
+  document.body.appendChild(buttonNextQuestion);
 })
 buttonFour.addEventListener("click", function(){
   if(buttonFour.textContent === infoArr[0]){
@@ -565,11 +461,12 @@ buttonFour.addEventListener("click", function(){
     console.log("Correct");
   }
   else{
-    //buttonFour.style.backgroundColor("red");
+    buttonFour.style.backgroundColor = "red";
+    setCorrectButtonGreen(correctButton);
   }
-  infoArr = getIonicCompound();
-  newQuestions(infoArr);
+  document.body.appendChild(buttonNextQuestion);
 })
+
 
 
 
@@ -593,15 +490,25 @@ function newQuestions(info){
     //sets current button from the loop to the infoList index
     buttonList[i].textContent = infoList[randomQuestionIndex];
     //removes the value thats been put into the button from infoList to get different values for each button
+    if(buttonList[i].textContent == info[0]){
+      correctButton = i;
+    
+      console.log(i);
+
+    }
     infoList.splice(randomQuestionIndex,1);
 
 
     
    
 
+    // console.log("The info Arr is")
+    //console.log(infoArr);
+    // console.log("The infoList is")
+    // console.log(infoList)
   }
-  
-
+  console.log(infoArr);
+  questionEl.textContent = "What is the chemical formula of " + infoList[0] + "?";
   // Element.remove(buttonOne);
   // Element.remove(buttonTwo);
   // Element.remove(buttonThree);
@@ -614,11 +521,20 @@ function newQuestions(info){
   // buttonList.append(buttonTwo);
   // buttonList.append(buttonThree);
   // buttonList.append(buttonFour);
-
 }
 
-
+function setCorrectButtonGreen(num){
+  if(num == 0)
+    buttonOne.style.backgroundColor = "green";
+  if(num == 1)
+    buttonTwo.style.backgroundColor = "green";
+  if(num == 2)
+    buttonThree.style.backgroundColor = "green";
+  if(num == 3)
+    buttonFour.style.backgroundColor = "green";
+}
 
 let infoArr = getIonicCompound();
 newQuestions(infoArr);
+
 
