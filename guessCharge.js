@@ -332,6 +332,7 @@ buttonOne.addEventListener("click", function(){
       buttonOne.style.backgroundColor = "red";
       setCorrectButtonGreen(correctButton);
     }
+    console.log(correct);
     scoreEl.textContent = `Your Score is ${correct}/${totalQuestions}`;
     
   }
