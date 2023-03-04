@@ -5,6 +5,7 @@ let alreadyClicked = false;
 console.log("SO₄²-");
 
 let buttonNextQuestion = document.createElement("button");
+buttonNextQuestion.setAttribute("id","nextQ");
 buttonNextQuestion.textContent = "Click For Next Question";
 
 const questionEl = document.getElementById("question-El");

@@ -4,7 +4,7 @@ let totalQuestions = 0;
 let alreadyClicked = false;
 let buttonNextQuestion = document.createElement("button");
 buttonNextQuestion.textContent = "Click For Next Question";
-butttonNextQuestion.setAttribute("id","nextQ");
+buttonNextQuestion.setAttribute("id","nextQ");
 
 
 const questionEl = document.getElementById("question-El");

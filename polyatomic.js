@@ -3,10 +3,10 @@ let correct = 0;
 let totalQuestions = 0;
 let alreadyClicked = false;
 console.log("SO₄²-");
-const score = document.getElementById("")
+const score = document.getElementById("score-El")
 let buttonNextQuestion = document.createElement("button");
 buttonNextQuestion.textContent = "Click For Next Question";
-butttonNextQuestion.setAttribute("id","nextQ");
+buttonNextQuestion.setAttribute("id","nextQ");
 
 
 const questionEl = document.getElementById("question-El");
