@@ -3,8 +3,30 @@
 *{
     padding: 0;
     margin: 0;
+    outline: none; 
+    border: none;
     font-family: sans-serif;
     box-sizing: border-box;
+    transition: .2s linear;
+}
+
+html{
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: 5rem;
 }
 
 body {
@@ -123,4 +145,37 @@ button {
     text-decoration: underline;
     transition: 0.7s;
     border-radius: 10px;
+}
+
+.questionTitle {
+    margin-top: 100px;
+    color: black;
+    text-align: center;
+    font-size: 4rem;
+    padding-bottom: 70px;
+
+}
+
+.questionContainer {
+    box-sizing: border-box;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.question {
+    display: flex;
+    width: 100%;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+    background: white;
+    font-size: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.question:hover{
+    cursor: pointer;
+    background: rgba(247, 240, 240, 0.774);
+    transition: 0.5s;
+    text-decoration: underline rgb(77, 77, 77);
 }
