@@ -3,7 +3,7 @@ let correct = 0;
 let totalQuestions = 0;
 let alreadyClicked = false;
 let buttonNextQuestion = document.createElement("button");
-buttonNextQuestion.textContent = "Click For Next Question";
+buttonNextQuestion.textContent = "Next";
 buttonNextQuestion.setAttribute("id","nextQ");
 
 

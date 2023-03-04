@@ -191,7 +191,7 @@ button {
     text-decoration: underline rgb(77, 77, 77);
 }
 
-.nextQuestion {
+#nextQ{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -212,9 +212,15 @@ button {
     transition: all .2s ease-out;
 }
 
-.nextQuestion:hover{
+#nextQ:hover{
     box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%), 0 4px 6px 0 rgb(93 100 148 / 20%);
 } 
-    
+
+#score-El {
+    color: black;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+}
 
 

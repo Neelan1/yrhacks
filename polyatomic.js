@@ -5,7 +5,7 @@ let alreadyClicked = false;
 console.log("SO₄²-");
 const score = document.getElementById("score-El")
 let buttonNextQuestion = document.createElement("button");
-buttonNextQuestion.textContent = "Click For Next Question";
+buttonNextQuestion.textContent = "Next";
 buttonNextQuestion.setAttribute("id","nextQ");
 
 
