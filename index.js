@@ -1,7 +1,6 @@
-
-
 console.log("SO₄²-");
-
+let infoArr = getIonicCompound();
+newQuestions(infoArr);
 
 let metals = [
   Hydrogen = {
@@ -449,50 +448,52 @@ function getIonicCompound (){
 
 
 
+
+
 const buttonOne = document.getElementById("button1-El");
 const buttonTwo = document.getElementById("button2-El");
 const buttonThree = document.getElementById("button3-El");
 const buttonFour = document.getElementById("button4-El");
 
 buttonOne.addEventListener("click", function(){
-  if(buttonOne.textContent == infoList[1]){
+  if(buttonOne.textContent == infoArr[0]){
     buttonOne.style.color("green");
   } 
   else{
     buttonOne.style.color("red");
   }
-  infoList = getIonicCompoind();
-  newQuestions(infoList);
+  infoArr = getIonicCompoind();
+  newQuestions(infoArr);
 })
 buttonTwo.addEventListener("click", function(){
-  if(buttonTwo.textContent == infoList[1]){
+  if(buttonTwo.textContent == infoArr[0]){
     buttonTwo.style.color("green");
   }
   else{
     buttonTwo.style.color("red");
   }
-  infoList = getIonicCompoind();
-  newQuestions(infoList);
+  infoArr = getIonicCompoind();
+  newQuestions(infoArr);
 })
 buttonThree.addEventListener("click", function(){
-  if(buttonThree.textContent == infoList[1]){
+  if(buttonThree.textContent == infoArr[0]){
     buttonThree.style.color("green");
   }
   else{
     buttonThree.style.color("red");
   }
-  infoList = getIonicCompoind();
-  newQuestions(infoList);
+  infoArr = getIonicCompoind();
+  newQuestions(infoArr);
 })
 buttonFour.addEventListener("click", function(){
-  if(buttonFour.textContent == infoList[1]){
+  if(buttonFour.textContent == infoArr[0]){
     buttonFour.style.color("green");
   }
   else{
     buttonFour.style.color("red");
   }
-  infoList = getIonicCompoind();
-  newQuestions(infoList);
+  infoArr = getIonicCompoind();
+  newQuestions(infoArr);
 })
 
 
