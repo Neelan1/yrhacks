@@ -432,7 +432,7 @@ console.log(polyatomics[0].name);
 function getIonicCompound (){
   let randomMetal = Math.floor(Math.random() * metals.length);
   let randomNonMetal = Math.floor(Math.random() * nonMetals.length);
-  const subscripts = ["sdasd", "","₂","₃","₄","₅","₆","₇","₈","₉"];
+  const subscripts = ["sdasd", "","₂","₃","₄","₅","₆","₇","₈","₉", "", "", "", "₂", "₂", "₂", "₃", "₃", "₄","₅","₆"];
   const metal = metals[randomMetal];
   const nonMetal = nonMetals[randomNonMetal];
   let ionicCompound = `${metal.name} ${nonMetal.ionicCompoundEnd}`;
@@ -466,10 +466,10 @@ function getIonicCompound (){
   questionArray.push(correctIonic);
   let wrongIonic;
   for(i = 0; i < 3; i++){
-    wrongIonic = `${metal.symbol}${subscripts[Math.floor((Math.random() * 6)) + 1]}${nonMetal.symbol}${subscripts[Math.floor((Math.random() * 6)) + 1]}`;
+    wrongIonic = `${metal.symbol}${subscripts[Math.floor((Math.random() * 11)) + 10]}${nonMetal.symbol}${subscripts[Math.floor((Math.random() * 11)) + 10]}`;
     if(questionArray.indexOf(wrongIonic) != -1){
       while(questionArray.indexOf(wrongIonic) != -1){
-        wrongIonic = `${metal.symbol}${subscripts[Math.floor((Math.random() * 6)) + 1]}${nonMetal.symbol}${subscripts[Math.floor((Math.random() * 6)) + 1]}`;
+        wrongIonic = `${metal.symbol}${subscripts[Math.floor((Math.random() * 11)) + 10]}${nonMetal.symbol}${subscripts[Math.floor((Math.random() * 11)) + 10]}`;
       }
     }
     questionArray.push(wrongIonic);
