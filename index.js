@@ -79,7 +79,7 @@ let metals = [
     name: "Magnesium",
     symbol: "Mg",
     valence: 2,
-    charge: "1+"
+    charge: "2+"
   },
   Calcium = {
     name: "Calcium",
