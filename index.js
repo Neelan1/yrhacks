@@ -226,13 +226,13 @@ let metals = [
     charge: "3+"
   },
   Manganese2 = {
-    name: "Manganous",
+    name: "Manganese(II)",
     symbol: "Mn",
     valence: 2,
     charge: "2+"
   },
   Manganese4 = {
-    name: "Manganic",
+    name: "Manganese(IV)",
     symbol: "Mn",
     valence: 4,
     charge: "4+"
