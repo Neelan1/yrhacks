@@ -10,8 +10,16 @@
     transition: .2s linear;
 }
 
-
-
+@media (-webkit-device-pixel-ratio: 1.25) {
+    * {
+      zoom: 0.95;
+    }
+  }
+  @media (-webkit-device-pixel-ratio: 1.50) {
+    * {
+      zoom: 0.91;
+    }
+  }
 body {
     background-image: url(imagesforhome/background\ img.jpg);
     background-size: cover;
@@ -22,6 +30,7 @@ body {
 
 .menu li a{
     text-decoration: none;
+    font-size: 24px;
     text-transform: uppercase;
     color: white;
 }
